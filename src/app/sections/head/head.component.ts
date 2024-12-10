@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { HeaderElementsComponent } from '../../components/assets/header-elements/header-elements.component';
+import { NavbarComponent } from '../../components/head-section/navbar/navbar.component';
 
 @Component({
   selector: 'app-head',
-  imports: [HeaderElementsComponent],
+  imports: [NavbarComponent ],
   templateUrl: './head.component.html',
   styleUrl: './head.component.sass'
 })

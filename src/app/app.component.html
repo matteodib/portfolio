@@ -1,7 +1,15 @@
 <div class="custom-container">
     @for(section of sections; track section) {
     <section class="custom-section" @fadeInOut [id]="section">
-        <app-head></app-head>
+        @switch (section) {
+            @case ("head") {
+                <app-head></app-head>
+            }
+            @case ("skills") {
+                <app-skills></app-skills>
+            }
+        }
+        
     </section>
     }
     <app-vertical-dots [sections]="sections"></app-vertical-dots>

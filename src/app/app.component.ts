@@ -1,14 +1,15 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { CheckForUpdateService } from '../services/check-updates.service';
 import { PromptUpdateService } from '../services/update.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { animate, style, transition, trigger } from '@angular/animations';
-import { HeadComponent } from './home/head/head.component';
 import { VerticalDotsComponent } from "./components/vertical-dots/vertical-dots.component";
+import { HeadComponent } from './sections/head/head.component';
+import { SkillsComponent } from './sections/skills/skills.component';
 
 @Component({
   selector: 'app-root',
-  imports: [BrowserAnimationsModule, HeadComponent, VerticalDotsComponent],
+  imports: [BrowserAnimationsModule, HeadComponent, VerticalDotsComponent, SkillsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass',
   animations: [
@@ -25,7 +26,7 @@ import { VerticalDotsComponent } from "./components/vertical-dots/vertical-dots.
 })
 export class AppComponent {
   title = 'portfolio';
-  sections = ['head', 'section2', 'section3'];
+  sections = ['head', 'skills', 'section3'];
 
   constructor(checkUpdatesService: CheckForUpdateService, updateService: PromptUpdateService) {}
 
