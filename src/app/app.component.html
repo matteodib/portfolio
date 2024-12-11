@@ -1,12 +1,15 @@
 <div class="custom-container">
     @for(section of sections; track section) {
-    <section class="custom-section" @fadeInOut [id]="section">
+        <section class="custom-section" [ngClass]="section == 'skills' || section == 'resumee' ? 'min-h-screen' : 'h-screen' " @fadeInOut [id]="section">
         @switch (section) {
             @case ("head") {
                 <app-head></app-head>
             }
             @case ("skills") {
                 <app-skills></app-skills>
+            }
+            @case ("resumee") {
+                <app-resumee></app-resumee>
             }
         }
         

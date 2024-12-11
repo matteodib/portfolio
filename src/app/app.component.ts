@@ -6,10 +6,11 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { VerticalDotsComponent } from "./components/vertical-dots/vertical-dots.component";
 import { HeadComponent } from './sections/head/head.component';
 import { SkillsComponent } from './sections/skills/skills.component';
+import { ResumeeComponent } from './sections/resumee/resumee.component';
 
 @Component({
   selector: 'app-root',
-  imports: [BrowserAnimationsModule, HeadComponent, VerticalDotsComponent, SkillsComponent],
+  imports: [BrowserAnimationsModule, HeadComponent, VerticalDotsComponent, SkillsComponent, ResumeeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass',
   animations: [
@@ -26,7 +27,7 @@ import { SkillsComponent } from './sections/skills/skills.component';
 })
 export class AppComponent {
   title = 'portfolio';
-  sections = ['head', 'skills', 'section3'];
+  sections = ['head', 'skills', 'resumee'];
 
   constructor(checkUpdatesService: CheckForUpdateService, updateService: PromptUpdateService) {}
 

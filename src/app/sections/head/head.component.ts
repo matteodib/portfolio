@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from '../../components/head-section/navbar/navbar.component';
 import { ButtonComponent } from '../../components/button/button.component';
+import { NavService } from '../../services/nav.service';
 
 @Component({
   selector: 'app-head',
@@ -10,4 +11,5 @@ import { ButtonComponent } from '../../components/button/button.component';
 })
 export class HeadComponent {
 
+  constructor(public navService: NavService) {}
 }

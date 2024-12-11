@@ -1,3 +1,3 @@
-<button class="text-white px-12 py-3 rounded shadow" [ngClass]="style == 'primary' ? 'bg-primary' : 'bg-secondary'">
+<button class="px-12 py-3 rounded shadow" (click)="runMethod($event)" [ngClass]="style == 'primary' ? 'bg-primary text-secondary' : 'bg-secondary text-primary'" >
     {{text}}
 </button>

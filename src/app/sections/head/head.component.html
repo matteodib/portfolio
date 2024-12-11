@@ -8,41 +8,44 @@
                 I'm Matteo and i'm a frontend developer but i enjoy working with backend as well. <br>Working on many projects from scratch i'd like to think of myself as an aspiring fullstack developer. 
             </p>
             <p class="mt-5 md:mt-10">
-                <app-button text="Projects"></app-button>
+                <app-button text="Skills" (action)="navService.scrollTo('skills')"></app-button>
             </p>
         </div>
-        <div class="color-dripping-container">
-            <div class="w-full h-full">
-                <div class="particle">
-                    <p class="font-bold">Angular</p>
+        <div class="h-full relative">
+            <img src="assets/paint_drips.svg" class="absolute -top-32"/>
+            <div class="color-dripping-container h-full">
+                <div class="w-full h-full">
+                    <div class="particle">
+                        <p class="font-bold">Angular</p>
+                    </div>
+                    <div class="particle">
+                        <p class="font-bold">React</p>
+                    </div>
+                    <div class="particle">
+                        <p class="font-bold">Ionic</p>
+                    </div>
+                    <div class="particle">
+                        <p class="font-bold">Laravel</p>
+                    </div>
+                    <div class="particle">
+                        <p class="font-bold">NestJS</p>
+                    </div>
+                    <div class="particle">
+                        <p class="font-bold">SpringBoot</p>
+                    </div>
+                    <div class="border-dripping rounded-t-lg md:rounded-t-full"></div>
+                    <div class="border-dripping rounded-b-lg md:rounded-b-full"></div>
                 </div>
-                <div class="particle">
-                    <p class="font-bold">React</p>
-                </div>
-                <div class="particle">
-                    <p class="font-bold">Ionic</p>
-                </div>
-                <div class="particle">
-                    <p class="font-bold">Laravel</p>
-                </div>
-                <div class="particle">
-                    <p class="font-bold">NestJS</p>
-                </div>
-                <div class="particle">
-                    <p class="font-bold">SpringBoot</p>
-                </div>
-                <div class="border-dripping rounded-t-full"></div>
-                <div class="border-dripping rounded-b-full"></div>
+                <svg>
+                    <defs>
+                        <filter id="goo">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+                            <feColorMatrix in="name" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 30 -15" />
+                            <feBlend in="SourceGraphic" />
+                        </filter>
+                    </defs>
+                </svg>
             </div>
-            <svg>
-                <defs>
-                    <filter id="goo">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
-                        <feColorMatrix in="name" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 30 -15" />
-                        <feBlend in="SourceGraphic" />
-                    </filter>
-                </defs>
-            </svg>
         </div>
     </div>
 </div>

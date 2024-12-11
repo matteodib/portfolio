@@ -5,12 +5,12 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class NavService {
-  activeNavigation = new BehaviorSubject<'head' | 'skills' | 'section3'>("head")
+  activeNavigation = new BehaviorSubject<'head' | 'skills' | 'resumee'>("head")
   activeNavigation$ = this.activeNavigation.asObservable()
 
   constructor() {}
 
-  public setActiveNavigation(navId: 'head' | 'skills' | 'section3') {
+  public setActiveNavigation(navId: 'head' | 'skills' | 'resumee') {
       this.activeNavigation.next(navId)
   }
 

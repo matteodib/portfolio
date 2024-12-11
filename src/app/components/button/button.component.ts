@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -11,4 +11,9 @@ export class ButtonComponent {
 
   @Input("text") text: string = ""
   @Input("style") style : "primary" | "secondary" = "primary"
+  @Output("action") action = new EventEmitter()
+
+  runMethod(e: any) {
+    this.action.emit(e)
+  }
 }
