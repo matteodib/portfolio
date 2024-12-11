@@ -14,7 +14,7 @@ export class VerticalDotsComponent implements AfterViewInit {
 
   activeSection$: string | null = null;
   
-  constructor(private navService: NavService) {
+  constructor(public navService: NavService) {
     this.navService.activeNavigation$.subscribe(val => {
       this.activeSection$ = val
     })
@@ -45,8 +45,4 @@ export class VerticalDotsComponent implements AfterViewInit {
     });
   }
 
-  scrollTo(section: string ) {
-    const container = document.getElementById(section)
-    if(container) container.scrollIntoView({ behavior: 'smooth', block: 'center' })
-  }
 }

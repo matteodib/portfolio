@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LogoComponent } from '../assets/logo/logo.component';
 import { CommonModule } from '@angular/common';
+import { NavService } from '../../../services/nav.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,12 +12,16 @@ import { CommonModule } from '@angular/common';
 export class NavbarComponent {
 
   menuOpen: boolean = false
-  constructor() {}
+  activeSection: string = ""
+  constructor(public navService: NavService) {
+    this.navService.activeNavigation$.subscribe(val => {
+      this.activeSection = val
+    })
+  }
 
-  scrollTo(section: string ) {
+  scrollToMobile(section: string ) {
     this.menuOpen = false
-    const container = document.getElementById(section)
-    if(container) container.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    this.navService.scrollTo(section)
   }
 
 }

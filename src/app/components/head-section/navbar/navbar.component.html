@@ -1,4 +1,4 @@
-<div class="flex w-full h-12 fixed top-0 left-0 p-5">
+<div class="flex w-full h-12 fixed top-0 left-0 p-5" id="navbar">
     <nav class="w-full min-h-10">
         <div class="flex justify-between md:justify-start items-center p-4 md:mx-5 lg:mx-12 gap-10 bg-white rounded-full md:w-7/12 lg:w-5/12 xl:w-1/3 shadow">
             <app-logo></app-logo>
@@ -12,7 +12,8 @@
             </button>
             <div class="hidden md:block">
                 <ul class="flex gap-5">
-                    <li><p class="font-bold">Skills</p></li>
+                    <li><p class="font-bold cursor-pointer hover:text-primary" [ngClass]="activeSection == 'head' ? 'text-primary' : '' " (click)="navService.scrollTo('head')">Intro</p></li>
+                    <li><p class="font-bold cursor-pointer hover:text-primary" [ngClass]="activeSection == 'skills' ? 'text-primary' : '' " (click)="navService.scrollTo('skills')">Skills</p></li>
                 </ul>
             </div>
         </div>
@@ -21,29 +22,27 @@
 
 
 
-<div class="fixed inset-0 bg-white z-50 p-6 flex flex-col" *ngIf="menuOpen">
+<div class="fixed inset-0 bg-white z-50 p-6 flex flex-col" id="mobile-menu-window" *ngIf="menuOpen">
     <div class="flex justify-between items-center mb-6">
         <app-logo></app-logo>
-        <button class="text-3xl font-bold text-gray-600" (click)="menuOpen = false">&times;</button>
+        <button class="text-3xl text-gray-600" (click)="menuOpen = false">&times;</button>
     </div>
 
-    <nav class="flex flex-col space-y-4 mb-8">
-        <a href="#work" class="text-lg text-primary hover:underline">My Work</a>
-        <a href="#shelf" class="text-lg text-primary hover:underline">My Shelf</a>
-        <a href="#resume" (click)="scrollTo('section3')" class="text-lg text-primary hover:underline">My Résumé</a>
-    </nav>
+    <div class="h-full flex flex-col justify-around">
+        <nav class="flex flex-col space-y-4 mb-8">
+            <a (click)="scrollToMobile('head')" class="text-lg text-primary hover:underline">Intro</a>
+            <a (click)="scrollToMobile('skills')" class="text-lg text-primary hover:underline">Skills</a>
+            <a (click)="scrollToMobile('resumee')" class="text-lg text-primary hover:underline">Resumee</a>
+            <a (click)="scrollToMobile('projects')" class="text-lg text-primary hover:underline">Projects</a>
+        </nav>
+    
+        <div class="mb-8">
+            <p class="text-gray-400 uppercase tracking-wide text-lg mb-2">Say Hello</p>
+            <a href="mailto:matteodibs@gmail.com" class="block text-primary hover:underline">matteodibs&#64;gmail.com</a>
+            <a href="https://t.me/matteodibs" target="_blank" class="block text-primary hover:underline">t.me/matteodibs</a>
+        </div>
 
-    <div class="mb-8">
-        <p class="text-gray-400 uppercase tracking-wide text-sm mb-2">Say Hello</p>
-        <a href="mailto:hello@olaolu.dev" class="block text-primary hover:underline">matteodibs</a>
-        <a href="https://t.me/mrolaolu" target="_blank"
-            class="block text-primary hover:underline">t.me/mrolaolu</a>
+        <div></div>
     </div>
 
-    <div class="flex space-x-6">
-        <a href="#" class="text-primary hover:underline">TW</a>
-        <a href="#" class="text-primary hover:underline">GH</a>
-        <a href="#" class="text-primary hover:underline">LN</a>
-        <a href="#" class="text-primary hover:underline">YT</a>
-    </div>
 </div>

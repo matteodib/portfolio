@@ -17,4 +17,9 @@ export class NavService {
   public getActiveNavigation() {
       return this.activeNavigation.value
   }
+  
+  scrollTo(section: string ) {
+    const container = document.getElementById(section)
+    if(container) container.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }
 }
