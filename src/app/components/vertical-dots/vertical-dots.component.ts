@@ -12,11 +12,11 @@ export class VerticalDotsComponent implements AfterViewInit {
 
   @Input("sections") sections: string[] = []
 
-  activeSection$: string | null = null;
+  activeSection: string | null = null;
   
   constructor(public navService: NavService) {
     this.navService.activeNavigation$.subscribe(val => {
-      this.activeSection$ = val
+      this.activeSection = val
     })
   }
   
