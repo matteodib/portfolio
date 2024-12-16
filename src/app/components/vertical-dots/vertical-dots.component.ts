@@ -30,7 +30,7 @@ export class VerticalDotsComponent implements AfterViewInit {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const section : "head" | "skills" | "resumee" =entry.target.id as "head" | "skills" | "resumee";
+          const section : "head" | "skills" | "resumee" | "footer" =entry.target.id as "head" | "skills" | "resumee" | "footer";
           this.navService.activeNavigation.next(section)
         }
       });

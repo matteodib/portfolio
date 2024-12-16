@@ -10,7 +10,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ButtonComponent {
 
   @Input("text") text: string = ""
+  @Input("icon") icon: string = ""
   @Input("style") style : "primary" | "secondary" = "primary"
+  @Input("size") size : "xl" | "sm" = "xl"
   @Output("action") action = new EventEmitter()
 
   runMethod(e: any) {
