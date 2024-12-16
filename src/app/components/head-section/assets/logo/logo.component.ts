@@ -23,13 +23,9 @@ export class LogoComponent {
   defineBackground(section:string) {
     let bg = ""
     switch (section) {
-      case "head":
-        bg = "bg-primary"
-        break;
-      case "section3":
+      case "resumee":
         bg = "bg-secondary"
         break;
-
       default:
         bg = "bg-primary"
         break;

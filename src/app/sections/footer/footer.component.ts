@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ButtonComponent } from '../../components/button/button.component';
+import { AnalyticsService } from '../../services/analytics.service';
 
 @Component({
   selector: 'app-footer',
@@ -9,6 +10,10 @@ import { ButtonComponent } from '../../components/button/button.component';
 })
 export class FooterComponent {
 
+
+  constructor(private analyticsService: AnalyticsService) {
+    this.analyticsService.trackEvent("User loaded footer", "footer loaded into view", "LOADED_FOOTER")
+  }
 
   goToLinkedin() {
     window.open('https://www.linkedin.com/in/matteodiblasio/')

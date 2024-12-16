@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AnalyticsService } from '../../services/analytics.service';
 
 @Component({
   selector: 'app-skills',
@@ -8,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class SkillsComponent {
 
+  constructor(private analyticsService: AnalyticsService) {
+    this.analyticsService.trackEvent("User loaded skills section", "skills loaded into view", "LOADED_SKILLS")
+  }
 }
