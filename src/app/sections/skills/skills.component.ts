@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AnalyticsService } from '../../services/analytics.service';
+import { GoogleAnalyticsService } from '../../services/googleanalytics.service';
 
 @Component({
   selector: 'app-skills',
@@ -9,7 +9,7 @@ import { AnalyticsService } from '../../services/analytics.service';
 })
 export class SkillsComponent {
 
-  constructor(private analyticsService: AnalyticsService) {
+  constructor(private analyticsService: GoogleAnalyticsService) {
     this.analyticsService.trackEvent("User loaded skills section", "skills loaded into view", "LOADED_SKILLS")
   }
 }

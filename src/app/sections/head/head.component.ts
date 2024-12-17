@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavbarComponent } from '../../components/head-section/navbar/navbar.component';
 import { ButtonComponent } from '../../components/button/button.component';
 import { NavService } from '../../services/nav.service';
-import { AnalyticsService } from '../../services/analytics.service';
+import { GoogleAnalyticsService } from '../../services/googleanalytics.service';
 
 @Component({
   selector: 'app-head',
@@ -12,7 +12,7 @@ import { AnalyticsService } from '../../services/analytics.service';
 })
 export class HeadComponent {
 
-  constructor(public navService: NavService, private analyticsService: AnalyticsService) {
+  constructor(public navService: NavService, private analyticsService: GoogleAnalyticsService) {
     this.analyticsService.trackEvent("User loaded website", "header loaded into view", "LOADED_HEAD")
   }
 }

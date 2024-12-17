@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ButtonComponent } from '../../components/button/button.component';
-import { Router } from '@angular/router';
-import { AnalyticsService } from '../../services/analytics.service';
+import { GoogleAnalyticsService } from '../../services/googleanalytics.service';
 
 @Component({
   selector: 'app-resumee',
@@ -11,7 +10,7 @@ import { AnalyticsService } from '../../services/analytics.service';
 })
 export class ResumeeComponent {
 
-  constructor(private analyticsService: AnalyticsService) {}
+  constructor(private analyticsService: GoogleAnalyticsService) {}
 
   downloadCurriculum() {
     this.analyticsService.trackEvent("User downloaded curriculum", "A user clicked on the button to download the cv", "DOWNLOADED_CV")

@@ -8,10 +8,11 @@ import { HeadComponent } from './sections/head/head.component';
 import { SkillsComponent } from './sections/skills/skills.component';
 import { ResumeeComponent } from './sections/resumee/resumee.component';
 import { FooterComponent } from './sections/footer/footer.component';
+import { CookieBannerComponent } from './components/cookie-banner/cookie-banner.component';
 
 @Component({
   selector: 'app-root',
-  imports: [BrowserAnimationsModule, HeadComponent, VerticalDotsComponent, SkillsComponent, ResumeeComponent, FooterComponent],
+  imports: [BrowserAnimationsModule, HeadComponent, VerticalDotsComponent, SkillsComponent, ResumeeComponent, FooterComponent, CookieBannerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass',
   animations: [

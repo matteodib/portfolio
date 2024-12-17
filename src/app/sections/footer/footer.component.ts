@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ButtonComponent } from '../../components/button/button.component';
-import { AnalyticsService } from '../../services/analytics.service';
+import { GoogleAnalyticsService } from '../../services/googleanalytics.service';
 
 @Component({
   selector: 'app-footer',
@@ -11,7 +11,7 @@ import { AnalyticsService } from '../../services/analytics.service';
 export class FooterComponent {
 
 
-  constructor(private analyticsService: AnalyticsService) {
+  constructor(private analyticsService: GoogleAnalyticsService) {
     this.analyticsService.trackEvent("User loaded footer", "footer loaded into view", "LOADED_FOOTER")
   }
 
