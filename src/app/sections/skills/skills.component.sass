@@ -1,0 +1,16 @@
+.custom-list-item
+    display: flex
+    gap: 10px
+    align-items: center
+    transition-delay: 100ms
+    outline-color: transparent
+    background-color: transparent
+    -webkit-tap-highlight-color: transparent
+    &:before
+        content: ''
+        display: block
+        width: 5px
+        height: 5px
+        background-color: theme('colors.primary')
+        border: 1px solid theme('colors.primary')
+        transform: rotate(45deg)

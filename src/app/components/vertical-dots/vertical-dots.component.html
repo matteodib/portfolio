@@ -1,0 +1,11 @@
+<nav class="hidden md:block fixed center-position right-5 w-2">
+    <ul class="w-full flex flex-col gap-16 items-center">
+        @for (section of sections; track section) {
+            <li class="w-full">
+                <button [class]="activeSection == 'resumee' ? 'green-dot' : 'dot' " [ngClass]="section == activeSection ? 'active-dot' : '' " (click)="navService.scrollTo(section)">
+        
+                </button>
+            </li>
+        }
+    </ul>
+</nav>
